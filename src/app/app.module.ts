@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MyServiceService } from './my-service.service';
 import { CashHomeComponent } from './cash-home/cash-home.component';
+import { CashHomePageComponent } from './cash-home-page/cash-home-page.component';
+import { AddPatientComponent } from './add-patient/add-patient.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,11 @@ import { CashHomeComponent } from './cash-home/cash-home.component';
     
     LoginComponent,
     
-    CashHomeComponent
+    CashHomeComponent,
+    
+    CashHomePageComponent,
+    
+    AddPatientComponent
   ],
   imports: [
     BrowserModule,

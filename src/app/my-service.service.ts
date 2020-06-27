@@ -14,6 +14,12 @@ export class MyServiceService {
     const headers =new HttpHeaders().set('Content_Type', 'application/json');
     return this.httpService.post<string>("http://localhost:3423/login", user, { headers,responseType:'text' as 'json'});
   }
+  public addpatient(data: string) {
+    
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.post<string>("http://localhost:3423/patient/add", data, { headers,responseType:'text' as 'json'});
+  }
 }
 export class User
 

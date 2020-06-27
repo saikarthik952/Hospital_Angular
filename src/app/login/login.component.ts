@@ -38,13 +38,14 @@ this.service.login(new User(this.loginForm.controls.emailId.value,this.loginForm
   this.message=data;
   else{
     localStorage.setItem("role",data);
-    if(data=="pharamcist")
+    if(data=="cash")
+    {this.router.navigate(['cash/Homepage']);
     this.message=data;
-    else if(data=="pharamcist")
+    }else if(data=="pharamcist")
     this.message=data;
    else if(data=="pharamcist")
    this.message=data;
-    this.router.navigate(['cashHome']);
+    
   }
 
 
