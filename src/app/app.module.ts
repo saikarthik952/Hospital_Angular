@@ -11,6 +11,7 @@ import { MyServiceService } from './my-service.service';
 import { CashHomeComponent } from './cash-home/cash-home.component';
 import { CashHomePageComponent } from './cash-home-page/cash-home-page.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
     
     CashHomePageComponent,
     
-    AddPatientComponent
+    AddPatientComponent,
+    
+    UpdatePatientComponent
   ],
   imports: [
     BrowserModule,

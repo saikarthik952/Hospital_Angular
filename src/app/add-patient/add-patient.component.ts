@@ -3,7 +3,7 @@ import {MyServiceService, User} from '../my-service.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import countries from "../_files/countries.json";
-import { WSA_E_CANCELLED } from 'constants';
+
 @Component({
   selector: 'app-add-patient',
   templateUrl: './add-patient.component.html',

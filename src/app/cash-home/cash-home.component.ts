@@ -20,5 +20,9 @@ user:string;
     
 
   }
-
+logout()
+{
+  localStorage.clear();
+  this.router.navigate(['login']);
+}
 }

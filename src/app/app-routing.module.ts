@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { CashHomeComponent } from './cash-home/cash-home.component';
 import { CashHomePageComponent } from './cash-home-page/cash-home-page.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
+import { UpdatePatientComponent } from './update-patient/update-patient.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
       {
 
         path:'addpatient',component:AddPatientComponent
+        
+      },
+      {
+
+        path:'updatepatient',component:UpdatePatientComponent
         
       },
       
