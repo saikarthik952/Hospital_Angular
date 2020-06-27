@@ -1,0 +1,19 @@
+* {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.nav-item {
+    margin-right: 5px;
+}
+
+.quick_actions .row .card {
+    min-height: 150px;
+    margin: 5px 5px;
+    padding: 5px 5px;
+    position: relative;
+}
+
+.view_btn {
+    position: absolute;
+    bottom: 0;
+}
