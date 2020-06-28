@@ -66,13 +66,13 @@ deletepatient()
 
 
       console.log(data);
-      if(data=="Patient Updated Successfully")
+      if(data=="Patient Deleted Successfully")
       {
         this.deletepatientform.reset();
       this.successmessage=data;
       }else
       {
-        this.failuremessage="Patient Updation Failed";
+        this.failuremessage="Patient Deleted Failed";
       }
   });
 
