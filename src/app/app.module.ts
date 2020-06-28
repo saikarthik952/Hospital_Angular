@@ -12,6 +12,8 @@ import { CashHomeComponent } from './cash-home/cash-home.component';
 import { CashHomePageComponent } from './cash-home-page/cash-home-page.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
+import { AllPatientsComponent } from './all-patients/all-patients.component';
+import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,11 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
     
     AddPatientComponent,
     
-    UpdatePatientComponent
+    UpdatePatientComponent,
+    
+    AllPatientsComponent,
+    
+    DeletePatientComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,40 @@
+<div class="panel panel-primary container my-4">
+  <div class="panel-heading">
+    <h2>Patients List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped" border=1>
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Patient SSN ID</th>
+          <th>Patient Name</th>
+          <th>DOJ</th>
+          <th>Status</th>
+          <th>Bed Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of patients | async">
+          <td>{{p.ws_pat_id}}</td>
+          <td>{{p.ws_pat_ssn}}</td>
+          <td>{{p.ws_pat_name}}</td>
+          <td>{{p.ws_pat_dob}}</td>
+          <td>{{p.ws_pat_status}}</td>
+          <td>{{p.ws_pat_type}}</td>
+          <td><button   class="btn btn-danger btn-sm">Delete</button>
+              <button  class="btn btn-info" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+
+        <!--Testing -->
+          <tr colspan=4>  
+          <p> Testing only ... keep ' (click) = "deletePatientById(p.ws_pat_id) ' before class attribute in the button and tag  remove this tr tag </p>
+              <td><button (click)="deletePatientById(1)" class="btn btn-danger btn-sm">Delete</button></td>
+          </tr>
+        <!--Testing -->
+      </tbody>
+    </table>
+  </div>
+</div>

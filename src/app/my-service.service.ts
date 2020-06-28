@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class MyServiceService {
 
   constructor(private httpService: HttpClient) { }
-
+  private baseUrl = "http://localhost:3423/patient/";
 
   public login(user: User) {
     
@@ -27,11 +27,28 @@ export class MyServiceService {
     const headers =new HttpHeaders().set('Content_Type', 'application/json');
     return this.httpService.put<string>("http://localhost:3423/patient/updatepatient", data, { headers,responseType:'text' as 'json'});
   }
+  public deletepatient(data: string) {
+    
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.put<string>("http://localhost:3423/patient/deletepatient", data, { headers,responseType:'text' as 'json'});
+  }
   public getpatient(data: Patient): Observable<Patient> {
     
     
     const headers =new HttpHeaders().set('Content_Type', 'application/json');
     return this.httpService.put<Patient>("http://localhost:3423/patient/getpatient", data, { headers,responseType:'json'});
+  }
+
+  public  deletePatientById(id: number): Observable<any> {
+
+    return this.httpService.delete('http://localhost:3423/patient/'+ id, { responseType: 'text' });
+  }
+  getallpatients():Observable<any> {
+    console.log("Getting")
+    
+    return this.httpService.get("http://localhost:3423/patient/viewpatients");
+    
   }
   
 }

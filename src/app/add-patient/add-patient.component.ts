@@ -50,26 +50,26 @@ this.countryInfo=(countries as any).Countries;
    
   }
  
-addpatient()
-{
-console.log(this.addpatientform.value);
-this.addpatientform.patchValue({
-  ws_pat_state:this.stateInfo[this.statevalue].StateName
-});
-this.service.addpatient(this.addpatientform.value).subscribe(data=>{
+    addpatient()
+    {
+      console.log(this.addpatientform.value);
+      this.addpatientform.patchValue({
+        ws_pat_state:this.stateInfo[this.statevalue].StateName
+      });
+      this.service.addpatient(this.addpatientform.value).subscribe(data=>{
 
 
 
-console.log(data);
-if(data=="Patient Created Successfully")
-{
-  this.addpatientform.reset();
-this.successmessage=data;
-}else
-{
-  this.failuremessage="Patient Creation Failed";
-}
-});
+      console.log(data);
+      if(data=="Patient Created Successfully")
+      {
+        this.addpatientform.reset();
+      this.successmessage=data;
+      }else
+      {
+        this.failuremessage="Patient Creation Failed";
+      }
+      });
 
-}
+    }
 }
