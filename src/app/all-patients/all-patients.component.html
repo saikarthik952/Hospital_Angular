@@ -16,23 +16,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let p of patients | async">
+        <tr *ngFor="let p of patients">
           <td>{{p.ws_pat_id}}</td>
           <td>{{p.ws_pat_ssn}}</td>
           <td>{{p.ws_pat_name}}</td>
           <td>{{p.ws_pat_dob}}</td>
           <td>{{p.ws_pat_status}}</td>
           <td>{{p.ws_pat_type}}</td>
-          <td><button   class="btn btn-danger btn-sm">Delete</button>
+          <td><button (click)="deletePatientById(p.ws_pat_id)"   class="btn btn-danger btn-sm">Delete</button>
               <button  class="btn btn-info" style="margin-left: 10px">Details</button>
           </td>
         </tr>
 
         <!--Testing -->
-          <tr colspan=4>  
-          <p> Testing only ... keep ' (click) = "deletePatientById(p.ws_pat_id) ' before class attribute in the button and tag  remove this tr tag </p>
-              <td><button (click)="deletePatientById(1)" class="btn btn-danger btn-sm">Delete</button></td>
-          </tr>
+         
         <!--Testing -->
       </tbody>
     </table>

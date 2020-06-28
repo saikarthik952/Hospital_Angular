@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AllPatientsComponent implements OnInit {
 
-  patients: Observable<Patient[]>;
+  patients:any;
 
   constructor(private service:MyServiceService) { }
 
@@ -20,7 +20,9 @@ export class AllPatientsComponent implements OnInit {
   }
   reloadData() {
     
-    this.patients = this.service.getallpatients();
+    this.service.getallpatients().subscribe(data=>{
+      this.patients = data;
+    });
     console.log(this.patients);
     console.log("component");
   }
