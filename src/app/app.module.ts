@@ -14,7 +14,7 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { AllPatientsComponent } from './all-patients/all-patients.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
-
+import { PharmaHomeComponent } from './pharma-home/pharma-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,11 @@ import { DeletePatientComponent } from './delete-patient/delete-patient.componen
     
     AllPatientsComponent,
     
-    DeletePatientComponent
+    DeletePatientComponent,
+    
+    PharmaHomeComponent,
+    
+  
   ],
   imports: [
     BrowserModule,

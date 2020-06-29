@@ -39,11 +39,13 @@ this.service.login(new User(this.loginForm.controls.emailId.value,this.loginForm
   else{
     localStorage.setItem("role",data);
     if(data=="cash")
-    {this.router.navigate(['cash/Homepage']);
+    {
+    this.message=data;
+    this.router.navigate(['cash/Homepage']);
+    }else if(data=="pharamcist")
+    {this.router.navigate(['pharmahome']);
     this.message=data;
     }else if(data=="pharamcist")
-    this.message=data;
-   else if(data=="pharamcist")
    this.message=data;
     
   }
