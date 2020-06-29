@@ -44,12 +44,31 @@ export class MyServiceService {
 
     return this.httpService.delete('http://localhost:3423/patient/'+ id, { responseType: 'text' });
   }
-  getallpatients():Observable<any> {
+ public getallpatients():Observable<any> {
     console.log("Getting")
     
     return this.httpService.get("http://localhost:3423/patient/viewpatients");
     
   }
+ public getallpatientmedicines(data:string):Observable<any> {
+    console.log("Getting")
+    
+    return this.httpService.put("http://localhost:3423/pharmacist/getpatientmedicines",data);
+    
+  }
+  public getmedicine(data:string):Observable<Medicines> {
+    console.log("Getting")
+    
+    return this.httpService.put<Medicines>("http://localhost:3423/pharmcist/getmedicine",data);
+    
+  } 
+  public addmedicine(data:string):Observable<any> {
+    console.log("Getting")
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.post<any>("http://localhost:3423/pharmacist/addmedcine",data,{ headers,responseType:'text' as 'json'});
+    
+  } 
   
 }
 export class User
@@ -76,6 +95,28 @@ export interface Patient
    ws_pat_city:string;
    ws_pat_state:string;
    ws_pat_status:string;
+ 
+
+}
+export interface PatientMedicines
+{ ws_pat_id:string;
+   ws_med_name:string;
+ 
+   ws_med_rate:string;
+ ws_med_qty:string;
+ ws_med_amt:string;
+  
+ 
+
+}
+export interface Medicines
+{ ws_med_id:string;
+   ws_med_name:string;
+ ws_med_avail:string;
+   ws_med_rate:string;
+ ws_med_qty:string;
+ 
+  
  
 
 }

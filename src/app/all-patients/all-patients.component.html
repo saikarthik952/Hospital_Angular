@@ -16,6 +16,9 @@
         </tr>
       </thead>
       <tbody>
+        <tr *ngIf="patients.length==0">
+          <td colspan=7><h1 class="text-center">No Records Found</h1></td>
+        </tr>
         <tr *ngFor="let p of patients">
           <td>{{p.ws_pat_id}}</td>
           <td>{{p.ws_pat_ssn}}</td>
@@ -24,12 +27,12 @@
           <td>{{p.ws_pat_status}}</td>
           <td>{{p.ws_pat_type}}</td>
           <td><button (click)="deletePatientById(p.ws_pat_id)"   class="btn btn-danger btn-sm">Delete</button>
-              <button  class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button  class="btn btn-info  btn-sm" style="margin-left: 10px">Details</button>
           </td>
         </tr>
-
+     
         <!--Testing -->
-         
+       
         <!--Testing -->
       </tbody>
     </table>

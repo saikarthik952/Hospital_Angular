@@ -7,7 +7,11 @@ import { AddPatientComponent } from './add-patient/add-patient.component';
 import { UpdatePatientComponent } from './update-patient/update-patient.component';
 import { AllPatientsComponent } from './all-patients/all-patients.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
-const routes: Routes = [
+import { PharmaHomeComponent } from './pharma-home/pharma-home.component';
+const routes: Routes = [ {
+  path:'pharmahome',component:PharmaHomeComponent
+
+},
   {path:'',redirectTo:'login', pathMatch: 'full' },
   {
 
@@ -41,6 +45,8 @@ const routes: Routes = [
         path:'viewpatients',component:AllPatientsComponent
         
       },
+
+     
       
     ]
 
