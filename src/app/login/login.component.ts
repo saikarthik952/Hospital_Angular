@@ -42,11 +42,14 @@ this.service.login(new User(this.loginForm.controls.emailId.value,this.loginForm
     {
     this.message=data;
     this.router.navigate(['cash/Homepage']);
-    }else if(data=="pharamcist")
+    }
+    else if(data=="pharamcist")
     {this.router.navigate(['pharmahome']);
     this.message=data;
-    }else if(data=="pharamcist")
-   this.message=data;
+    }
+    else if(data=="diagnositics")
+    this.router.navigate(['diaghome']);
+      this.message=data;
     
   }
 

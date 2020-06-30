@@ -8,8 +8,13 @@ import { UpdatePatientComponent } from './update-patient/update-patient.componen
 import { AllPatientsComponent } from './all-patients/all-patients.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { PharmaHomeComponent } from './pharma-home/pharma-home.component';
+import { DiagHomeComponent } from './diag-home/diag-home.component';
 const routes: Routes = [ {
   path:'pharmahome',component:PharmaHomeComponent
+
+},
+{
+path:'diaghome',component:DiagHomeComponent
 
 },
   {path:'',redirectTo:'login', pathMatch: 'full' },

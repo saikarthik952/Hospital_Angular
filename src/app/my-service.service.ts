@@ -69,7 +69,26 @@ export class MyServiceService {
     return this.httpService.post<any>("http://localhost:3423/pharmacist/addmedcine",data,{ headers,responseType:'text' as 'json'});
     
   } 
-  
+  /* */
+  public getallpatientdiagnostics(data:string):Observable<any> {
+    console.log("Getting")
+    
+    return this.httpService.put("http://localhost:3423/diagnosticcenter/getpatientdiagnostics",data);
+    
+  }
+  public getdiagnostic(data:string):Observable<Diagnostics> {
+    console.log("Getting")
+    
+    return this.httpService.put<Diagnostics>("http://localhost:3423/diagnosticcenter/getdiagnostic",data);
+    
+  } 
+  public adddiagnostic(data:string):Observable<any> {
+    console.log("Getting")
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.post<any>("http://localhost:3423/diagnosticcenter/adddiagnostic",data,{ headers,responseType:'text' as 'json'});
+    
+  } 
 }
 export class User
 
@@ -115,6 +134,26 @@ export interface Medicines
  ws_med_avail:string;
    ws_med_rate:string;
  ws_med_qty:string;
+ 
+  
+ 
+
+}
+
+
+export interface PatientDiagnostics
+{ ws_pat_id:string;
+   ws_diag_name:string;
+ ws_diag_amt:number;
+  
+ 
+
+}
+export interface Diagnostics
+{ 
+  ws_diag_id:string;
+   ws_diag_name:string;
+ ws_diag_amt:number;
  
   
  
