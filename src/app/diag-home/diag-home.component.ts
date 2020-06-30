@@ -80,8 +80,9 @@ export class DiagHomeComponent implements OnInit {
     this.service.getdiagnostic(this.getmedicine.value).subscribe(data=>{
     this.medicinemessage=null;
     if(data.ws_diag_id=="0")
+    {
     this.medicinemessage="No Diagnose Found";
-    else{
+    }else{
       this.medicinemessage="Diagnose Found";
       this.addmedicine.patchValue({
         ws_pat_id:this.p.ws_pat_id,
@@ -110,7 +111,7 @@ export class DiagHomeComponent implements OnInit {
   {
     console.log(this.addmedicine.value);
     this.service.adddiagnostic(this.addmedicine.value).subscribe(data=>{
-      if(data=="Diagnostic Added Successfully")
+      if(data=="Diagnostic Stored Successfully")
       {
         this.medicinemessage=null;
         this.successmessage=data;
@@ -119,8 +120,8 @@ export class DiagHomeComponent implements OnInit {
         this.addmedicine.reset();
       }
     });
-    //this.medicinemessage=null;
-    this.getpatient(this.addsuccessmessage);
+    this.medicinemessage=null;
+  //  this.getpatient(this.addsuccessmessage);
   }
   
   update()
@@ -128,12 +129,12 @@ export class DiagHomeComponent implements OnInit {
     this.successmessage="All Test Added SuccessFully";
     this.medicinemessage=null;
     this.newmedicines=[];
-    this.service.getallpatientmedicines(this.getpatientform.value).subscribe(data=>{
+    this.service.getallpatientdiagnostics(this.getpatientform.value).subscribe(data=>{
       this.pm=data;
       
           });
         
-          this.getpatient(this.successmessage);
+        //  this.getpatient(this.successmessage);
     
     
   }

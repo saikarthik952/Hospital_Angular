@@ -97,13 +97,13 @@
                               
                               
                               <button type="submit" class="btn btn-primary btn-sm mt-md-3" [disabled]="!getmedicine.valid">GET DATA</button>
-                                <button *ngIf="p!=null" type="submit" class="btn btn-success btn-sm mt-md-3" (click)="update()">DONE ADDING</button>
                           </form>
+                          <a *ngIf="p!=null"  class="btn btn-success btn-sm mt-md-3" (click)="update()">DONE ADDING</a>
+                          
                         </div>
                       </div>
                       <p *ngIf="medicinemessage != null" class="alert alert-info text-center info">{{medicinemessage}}</p>
                       <p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}}</p> 
-                      <p *ngIf="addsuccessmessage" class="alert alert-success text-center error">{{addsuccessmessage}}</p> 
                                 <div *ngIf="medicinemessage != null">
                                 <form [formGroup]="addmedicine" (ngSubmit)="addmedicines()">
                                     <div class="form-group">
@@ -173,3 +173,41 @@
                   </div>
                 </div>  
     
+      <div class="col-md-6 col-12">
+                      <div *ngIf="p!=null">
+                      <div class="panel panel-primary container my-4">
+                            <div class="panel-heading">
+                              <h2>New Diagnostics </h2>
+                            </div>
+                            <div class="panel-body table-responsive">
+                              <table class="table table-striped" border=1>
+                                <thead>
+                                  <tr>
+                                    <th>Patient ID</th>
+                                    <th>Diagnose name</th>
+                                    <th>Amount</th>
+                                    
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngIf="newmedicines.length==0">
+                                    <td colspan=7><h1 class="text-center">No Records Found</h1></td>
+                                  </tr>
+                                 <tr *ngFor="let nm of newmedicines">
+                                    <td>{{nm.ws_pat_id}}</td>
+                                    <td>{{nm.ws_diag_name}}</td>
+                                    <td>{{nm.ws_diag_amt}}</td>
+                                    
+                                   
+                                  </tr>
+                               
+                                  <!--Testing -->
+                                 
+                                  <!--Testing -->
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                </div>
