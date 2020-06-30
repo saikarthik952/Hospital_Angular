@@ -27,7 +27,7 @@
         </div>
         </div>
     </nav>
-    <p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}}</p> 
+    <p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}} <i class="mx-1 fa fa-thumbs-up" aria-hidden="true"></i></p> 
 <p *ngIf="failuremessage" class="alert alert-danger text-center error">{{failuremessage}}</p> 
 <div class="container">
     <h1 class="h2 py-4 text-center">  Patient Diagnostic Center Screen </h1> 
@@ -86,50 +86,44 @@
                 </div>
        </div>
     <div class="col-md-6 col-12">
-                        <div *ngIf="p!=null">
-                        <div class="card-body">
-                          <form [formGroup]="getmedicine" (ngSubmit)="getmedicines()">
-                              <div class="form-group panel-heading">
-                                <h2>Diagnose Name</h2>
-                                
-                                <input type="text"  class="form-control" formControlName="ws_diag_name" required>
-                              </div>
-                              
-                              
-                              <button type="submit" class="btn btn-primary btn-sm mt-md-3" [disabled]="!getmedicine.valid">GET DATA</button>
-                          </form>
-                          <a *ngIf="p!=null"  class="btn btn-success btn-sm mt-md-3" (click)="update()">DONE ADDING</a>
-                          
-                        </div>
-                      </div>
-                      <p *ngIf="medicinemessage != null" class="alert alert-info text-center info">{{medicinemessage}}</p>
-                      <p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}}</p> 
-                                <div *ngIf="medicinemessage != null">
-                                <form [formGroup]="addmedicine" (ngSubmit)="addmedicines()">
-                                    <div class="form-group">
-                                    <label for="email">Patient ID</label>
-                                    
-                                    <input type="text"  class="form-control" formControlName="ws_pat_id" readonly required>
-                                    </div>
-                                    <div class="form-group">
-                                    <label for="email">Diagnose Name</label>
-                                    
-                                    <input type="text"  class="form-control" formControlName="ws_diag_name" readonly required>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                    <label for="email">Diagnose Charges</label>
-                                    
-                                    <input type="text"  class="form-control" formControlName="ws_diag_amt" readonly required>
-                                    </div>
-
-                                    
-                                    
-                                    <button type="submit" class="btn btn-warning btn-sm mt-md-3" [disabled]="!addmedicine.valid" >ADD</button>
-                                    
-                                </form>
-                            
+                        
+                      <div *ngIf="p!=null">
+                      <div class="panel panel-primary container my-4">
+                            <div class="panel-heading">
+                              <h2>New Diagnostics </h2>
                             </div>
+                            <div class="panel-body table-responsive">
+                              <table class="table table-striped" border=1>
+                                <thead>
+                                  <tr>
+                                    <th>Patient ID</th>
+                                    <th>Diagnose name</th>
+                                    <th>Amount</th>
+                                    
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngIf="newmedicines.length==0">
+                                    <td colspan=7><h1 class="text-center">No Records Found</h1></td>
+                                  </tr>
+                                 <tr *ngFor="let nm of newmedicines">
+                                    <td>{{nm.ws_pat_id}}</td>
+                                    <td>{{nm.ws_diag_name}}</td>
+                                    <td>{{nm.ws_diag_amt}}</td>
+                                    
+                                   
+                                  </tr>
+                               
+                                  <!--Testing -->
+                                 
+                                  <!--Testing -->
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                
                   </div>
             <div class="col-md-6 col-12">
                       <div *ngIf="p!=null">
@@ -171,43 +165,55 @@
                 </div>
                 
                   </div>
-                </div>  
-    
+                
+    <div class="row container justify-content-center ">
       <div class="col-md-6 col-12">
-                      <div *ngIf="p!=null">
-                      <div class="panel panel-primary container my-4">
-                            <div class="panel-heading">
-                              <h2>New Diagnostics </h2>
-                            </div>
-                            <div class="panel-body table-responsive">
-                              <table class="table table-striped" border=1>
-                                <thead>
-                                  <tr>
-                                    <th>Patient ID</th>
-                                    <th>Diagnose name</th>
-                                    <th>Amount</th>
-                                    
-                                    
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  <tr *ngIf="newmedicines.length==0">
-                                    <td colspan=7><h1 class="text-center">No Records Found</h1></td>
-                                  </tr>
-                                 <tr *ngFor="let nm of newmedicines">
-                                    <td>{{nm.ws_pat_id}}</td>
-                                    <td>{{nm.ws_diag_name}}</td>
-                                    <td>{{nm.ws_diag_amt}}</td>
-                                    
-                                   
-                                  </tr>
-                               
-                                  <!--Testing -->
-                                 
-                                  <!--Testing -->
-                                </tbody>
-                              </table>
-                            </div>
-                          </div>
+                <p *ngIf="medicinemessage != null" class="alert alert-info text-center info">{{medicinemessage}} <i class="mx-1 fa fa-arrow-down" aria-hidden="true"></i></p>
+                <p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}} <i class="mx-1 fa fa-thumbs-up" aria-hidden="true"></i></p> 
+                      
+                <div *ngIf="p!=null">
+                        <div class="card-body">
+                          <form [formGroup]="getmedicine" (ngSubmit)="getmedicines()">
+                              <div class="form-group panel-heading">
+                                <h2>Diagnose Name</h2>
+                                
+                                <input type="text"  class="form-control" formControlName="ws_diag_name" required>
+                              </div>
+                              
+                              
+                              <button type="submit" class="btn btn-primary btn-sm mt-md-3" [disabled]="!getmedicine.valid">GET DATA</button>
+                               <a *ngIf="p!=null"  class="btn btn-success btn-sm mt-md-3 float-right" (click)="update()">DONE ADDING</a>
+                          </form>
+                         
+                          
                         </div>
-                </div>
+                      </div>
+                                <div *ngIf="medicinemessage != null">
+                                <form [formGroup]="addmedicine" (ngSubmit)="addmedicines()">
+                                    <div class="form-group">
+                                    <label for="email">Patient ID</label>
+                                    
+                                    <input type="text"  class="form-control" formControlName="ws_pat_id" readonly required>
+                                    </div>
+                                    <div class="form-group">
+                                    <label for="email">Diagnose Name</label>
+                                    
+                                    <input type="text"  class="form-control" formControlName="ws_diag_name" readonly required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                    <label for="email">Diagnose Charges</label>
+                                    
+                                    <input type="text"  class="form-control" formControlName="ws_diag_amt" readonly required>
+                                    </div>
+
+                                    
+                                    
+                                    <button type="submit" class="btn btn-warning btn-sm mt-md-3" [disabled]="!addmedicine.valid" >ADD</button>
+                                    
+                                </form>
+                            
+                            </div>
+                    </div>
+                  </div>
+            </div>
