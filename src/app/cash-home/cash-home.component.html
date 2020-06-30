@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="row page_head ">
+        <div class="col-12 blue-gradient-rgba text-white container-fluid ">
+                <h1 class="h1 text-center text-uppercase py-4 text-monospace font-weight-bold large"> Hospital Management System </h1>
+        </div>
+    </div>
+</div>
+<nav class="navbar  navbar-expand-sm navbar-dark bg-dark">
+    <div class="container">
+    <a class="navbar-brand" routerLink="/cash/Homepage">HMS</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/cash/Homepage"> <span class="text-capitalize"> {{user}} </span> <i class="fa fa-user" aria-hidden="true"></i> </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" routerLink="/cash/addpatient">Add </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cash/updatepatient">Edit</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cash/deletepatient">Delete</a>
+            </li>
+           <li class="nav-item">
+                <a class="nav-link" href="/cash/viewpatients">View</a>
+            </li>
+           
+        
+            <li class="nav-item ">
+                <a class="nav-link" (click)="logout()">Logout <i class="fas r fa-sign-out    "></i></a>
+            </li>
+            
+        </ul>
+    </div>
+    </div>
+</nav>
+<!--Footter-->
+<router-outlet></router-outlet>
