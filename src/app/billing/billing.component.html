@@ -1,3 +1,4 @@
+<p *ngIf="successmessage" class="alert alert-success text-center error">{{successmessage}}</p>
 <div class="container">
     <h1 class="h2 py-4 text-center"> Patient Billing</h1>
     <div class="row justify-content-center">
@@ -71,7 +72,7 @@
 
 
 <p *ngIf="failuremsgmed!=null" class="alert alert-danger text-center error">{{failuremsgmed}}</p>
-<div *ngIf="pmed!=null" class="panel panel-primary container px-0 my-4">
+<div *ngIf="p!=null" class="panel panel-primary container px-0 my-4">
     <div class="panel-heading">
         <h2>Medicine Details</h2>
     </div>
@@ -113,7 +114,7 @@
 </div>
 
 <p *ngIf="failuremsgdiag!=null" class="alert alert-danger text-center error">{{failuremsgdiag}}</p>
-<div *ngIf="pdiag!=null" class="panel panel-primary container px-0 my-4">
+<div *ngIf="p!=null" class="panel panel-primary container px-0 my-4">
     <div class="panel-heading">
         <h2>Diagnostic Details</h2>
     </div>
@@ -148,6 +149,7 @@
         </table>
         <p>Diagnostics Total={{dt}}</p>
         <p>Grand Total : {{rt+mt+dt}}</p>
+        <button *ngIf="p!=null" type="submit" class="btn btn-warning mt-md-3" (click)="update()">CONFIRM</button>
 
     </div>
 </div>

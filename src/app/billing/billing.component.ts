@@ -11,6 +11,7 @@ export class BillingComponent implements OnInit {
 
   getpatientform : FormGroup;
   p:Patient;
+  successmessage:string;
   pmed:any;
   pdiag:any;
   dt:number;
@@ -91,6 +92,28 @@ export class BillingComponent implements OnInit {
         error => {this.failuremessage="Patient Not Found";
         this.p=null;
       }        );
+  }
+  update()
+  {
+    this.p.ws_pat_status="Discharged";
+    console.log(JSON.parse(JSON.stringify(this.p)));
+    this.service.updatepatient(JSON.parse(JSON.stringify(this.p))).subscribe(data=>{
+    
+    
+    
+    console.log(data);
+    if(data=="Patient Updated Successfully")
+    {
+      
+    this.successmessage="Patient Billing Generated SuccessFully";
+    this.p=null;
+    }else
+    {
+      this.failuremessage="Patient Updation Failed";
+    }
+    });
+    
+
   }
 
   

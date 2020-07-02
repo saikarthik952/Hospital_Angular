@@ -71,7 +71,8 @@ this.getalpatientmedicines(this.getpatientform.value);
   {
     this.service.getallpatientmedicines(value).subscribe(data=>{
 this.pm=data;
-
+let sum: number=this.pm.map(item=>Number(+item.ws_med_amt)).reduce((a:number,b:number)=>+a + Number(+data.ws_med_amt));
+console.log(sum);
     });
   }
   getmedicines()
