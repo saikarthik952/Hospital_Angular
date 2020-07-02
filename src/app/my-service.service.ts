@@ -40,6 +40,21 @@ export class MyServiceService {
     return this.httpService.put<Patient>("http://localhost:3423/patient/getpatient", data, { headers,responseType:'json'});
   }
 
+
+  public getpatientmedicine(data: PatientMedicines): Observable<any> {
+    
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.put("http://localhost:3423/patient/getpatientmedicines", data, { headers,responseType:'json'});
+  }
+
+  public getpatientdiagnostics(data: PatientDiagnostics): Observable<any> {
+    
+    
+    const headers =new HttpHeaders().set('Content_Type', 'application/json');
+    return this.httpService.put("http://localhost:3423/patient/getpatientdiagnostics", data, { headers,responseType:'json'});
+  }
+
   public  deletePatientById(id: number): Observable<any> {
 
     return this.httpService.delete('http://localhost:3423/patient/'+ id, { responseType: 'text' });
@@ -114,6 +129,8 @@ export interface Patient
    ws_pat_city:string;
    ws_pat_state:string;
    ws_pat_status:string;
+   ws_pat_dod:string;
+   ws_pat_nod:string;
  
 
 }

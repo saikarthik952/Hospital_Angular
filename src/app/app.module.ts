@@ -16,6 +16,7 @@ import { AllPatientsComponent } from './all-patients/all-patients.component';
 import { DeletePatientComponent } from './delete-patient/delete-patient.component';
 import { PharmaHomeComponent } from './pharma-home/pharma-home.component';
 import { DiagHomeComponent } from './diag-home/diag-home.component';
+import { BillingComponent } from './billing/billing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,8 @@ import { DiagHomeComponent } from './diag-home/diag-home.component';
     PharmaHomeComponent,
     
     DiagHomeComponent,
+    
+    BillingComponent,
     
   
   ],
