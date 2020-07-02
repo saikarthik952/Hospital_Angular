@@ -48,6 +48,7 @@ export class UpdatePatientComponent implements OnInit {
 
       ws_pat_state:new FormControl('',Validators.required),
       ws_pat_status:new FormControl('',Validators.required),
+      ws_pat_dod:new FormControl('',Validators.required),
 
         });
         this.stateInfo=this.countryInfo[100].States;
@@ -104,6 +105,7 @@ console.log(data.ws_pat_id);
    ws_pat_city:data.ws_pat_city,
 ws_pat_status:data.ws_pat_status,
    ws_pat_state:data.ws_pat_state,
+   ws_pat_dod:data.ws_pat_dod,
       });
 
 
