@@ -39,6 +39,8 @@
                           <label for="email">Patient ID *</label>
                           
                           <input type="text"  class="form-control" formControlName="ws_pat_id" required>
+                          <span class="text-danger" *ngIf="getpatientform.controls.ws_pat_id.dirty && getpatientform.controls.ws_pat_id.errors">*This is required</span>
+               
                         </div>
                         
                         
@@ -178,6 +180,8 @@
                                 <h2>Diagnose Name</h2>
                                 
                                 <input type="text"  class="form-control" formControlName="ws_diag_name" required>
+                                <span class="text-danger" *ngIf="getmedicine.controls.ws_diag_name.dirty && getmedicine.controls.ws_diag_name.errors">*This is required</span>
+               
                               </div>
                               
                               

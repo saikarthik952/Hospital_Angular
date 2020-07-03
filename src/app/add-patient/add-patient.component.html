@@ -10,21 +10,30 @@
             <div class="col-md-6 col-12 my-1 font-weight-bold">
               <label for="email">Patient SSN <span class="text-danger font-weight-bold mx-1">*</span> </label>
               <input type="text"  class="form-control" formControlName="ws_pat_ssn" required>
+              <span class="text-danger" *ngIf="addpatientform.controls.ws_pat_ssn.dirty && addpatientform.controls.ws_pat_ssn.errors">*This is required</span>
+                        
             </div>
             <div class="col-md-6 col-12 my-1 font-weight-bold">
               <label for="">Patient name <span class="text-danger font-weight-bold mx-1">*</span></label>
               <input type="text"  class="form-control" formControlName="ws_pat_name" required> 
+              <span class="text-danger" *ngIf="addpatientform.controls.ws_pat_name.dirty && addpatientform.controls.ws_pat_name.errors">*This is required</span>
+               
             </div>
           </div>
           <div class="form-group row ">
             <div class="col-md-6 col-12 my-1 font-weight-bold">
               <label for="Patinet Age">Patient Age <span class="text-danger font-weight-bold mx-1">*</span></label>
               <input type="number"  class="form-control" formControlName="ws_pat_age" required>  
+              <span class="text-danger" *ngIf="addpatientform.controls.ws_pat_age.dirty && addpatientform.controls.ws_pat_age.errors">*This is required</span>
+               
             </div> 
             <div class="col-md-6 col-12 my-1 font-weight-bold">
               <label for="password">Date of Admission <span class="text-danger font-weight-bold mx-1">*</span></label>
               <input type="date"  class="form-control" formControlName="ws_pat_dob" required>  
+              <span class="text-danger" *ngIf="addpatientform.controls.ws_pat_dob.dirty && addpatientform.controls.ws_pat_dob.errors">*This is required</span>
+               
             </div>
+           
           </div>
           <div class="form-group row ">
             <div class="col-md-6 col-12 my-1 font-weight-bold">
@@ -32,12 +41,15 @@
               <select formControlName="ws_pat_type" class="form-control">
                   <option >--Select type of Bed--</option>
                   <option *ngFor="let bed of bedtype; let j = index" value="{{bed}}">{{bed}}</option>
-                </select>   
+                </select>  
+              
               </div>  
               <div class="col-md-6 col-12 my-1 font-weight-bold">
                 <label for="password">Patient Address <span class="text-danger font-weight-bold mx-1">*</span></label>
                 
-                <input type="text"  class="form-control" formControlName="ws_pat_adrs" required>  
+                <input type="text"  class="form-control" formControlName="ws_pat_adrs" required> 
+                <span class="text-danger" *ngIf="addpatientform.controls.ws_pat_adrs.dirty && addpatientform.controls.ws_pat_adrs.errors">*This is required</span>
+                
               </div>
           </div>
           <div class="form-group row ">

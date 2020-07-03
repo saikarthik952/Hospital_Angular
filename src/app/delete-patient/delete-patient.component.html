@@ -10,6 +10,8 @@
                           <label for="email">Patient ID <span class="text-danger font-weight-bold mx-1">*</span></label>
                           
                           <input type="text"  class="form-control" formControlName="ws_pat_id" required>
+                          <span class="text-danger" *ngIf="getpatientform.controls.ws_pat_id.dirty && getpatientform.controls.ws_pat_id.errors">*This is required</span>
+               
                         </div>
                         
                         

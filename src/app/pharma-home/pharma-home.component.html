@@ -39,6 +39,8 @@
                           <label for="email">Patient ID *</label>
                           
                           <input type="text"  class="form-control" formControlName="ws_pat_id" required>
+                          <span class="text-danger" *ngIf="getpatientform.controls.ws_pat_id.dirty && getpatientform.controls.ws_pat_id.errors">*This is required</span>
+                        
                         </div>
                         
                         
@@ -177,6 +179,8 @@
                                 <label for="email">Medicine Name</label>
                                 
                                 <input type="text"  class="form-control" formControlName="ws_med_name" required>
+                                <span class="text-danger" *ngIf="getmedicine.controls.ws_med_name.dirty && getmedicine.controls.ws_med_name.errors">*This is required</span>
+                        
                               </div>
                               
                               
@@ -210,6 +214,8 @@
                           <label for="email">Medicine Quantity</label>
                           
                           <input type="text"  class="form-control" formControlName="ws_med_qty" required>
+                          <span class="text-danger" *ngIf="addmedicine.controls.ws_med_qty.dirty && addmedicine.controls.ws_med_qty.errors">*This is required</span>
+                        
                         </div>
                         <a  class="btn btn-warning mt-md-3" (click)="getamount()">Get Amount</a >
 
@@ -217,6 +223,7 @@
                           <label for="email">Medicine Amount</label>
                           
                           <input type="text"  class="form-control" formControlName="ws_med_amt" readonly required>
+                          
                         </div>
 
                         

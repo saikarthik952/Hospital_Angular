@@ -10,6 +10,8 @@
                         <label for="email">Patient ID <span class="text-danger font-weight-bold mx-1">*</span></label>
 
                         <input type="text" class="form-control" formControlName="ws_pat_id" required>
+                        <span class="text-danger" *ngIf="getpatientform.controls.ws_pat_id.dirty && getpatientform.controls.ws_pat_id.errors">*This is required</span>
+               
                     </div>
 
 
@@ -148,7 +150,7 @@
             </tbody>
         </table>
         <p>Diagnostics Total={{dt}}</p>
-        <p>Grand Total : {{rt+mt+dt}}</p>
+        <h1 class="card-title text-center">Grand Total : {{rt+mt+dt}}</h1>
         <button *ngIf="p!=null" type="submit" class="btn btn-warning mt-md-3" (click)="update()">CONFIRM</button>
 
     </div>

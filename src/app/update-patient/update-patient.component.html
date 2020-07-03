@@ -10,6 +10,8 @@
                           <label for="email">Patient ID <span class="text-danger font-weight-bold mx-1">*</span></label>
                           
                           <input type="text"  class="form-control" formControlName="ws_pat_id" required>
+                          <span class="text-danger" *ngIf="getpatientform.controls.ws_pat_id.dirty && getpatientform.controls.ws_pat_id.errors">*This is required</span>
+                        
                         </div>
                         
                         
@@ -34,6 +36,8 @@
             <label for="email">Patient SSN <span class="text-danger font-weight-bold mx-1">*</span></label>
             
             <input type="text"  class="form-control" formControlName="ws_pat_ssn" required>
+            <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_ssn.dirty && updatepatientform.controls.ws_pat_ssn.errors">*This is required</span>
+                        
             </div>
           </div>
           <div class="form-group row font-weight-bold my-0">
@@ -41,11 +45,15 @@
             <label for="">Patient name <span class="text-danger font-weight-bold mx-1">*</span></label>
             
             <input type="text"  class="form-control" formControlName="ws_pat_name" required>  
+            <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_name.dirty && updatepatientform.controls.ws_pat_name.errors">*This is required</span>
+                      
           </div>
           <div class="col-md-6 col-12 my-1">
             <label for="Patinet Age">Patient Age <span class="text-danger font-weight-bold mx-1">*</span></label>
             
             <input type="number"  class="form-control" formControlName="ws_pat_age" required>  
+            <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_age.dirty && updatepatientform.controls.ws_pat_age.errors">*This is required</span>
+             
           </div>
           </div>
            <div class="form-group row font-weight-bold my-0">
@@ -53,6 +61,8 @@
                 <label for="password">Date of Admission <span class="text-danger font-weight-bold mx-1">*</span></label>
                 
                 <input type="date"  class="form-control" formControlName="ws_pat_dob" required>  
+                <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_dob.dirty && updatepatientform.controls.ws_pat_dob.errors">*This is required</span>
+             
               </div>
           <div class="col-md-6 col-12 my-1">
             <label for="password">Type of Bed <span class="text-danger font-weight-bold mx-1">*</span></label>
@@ -68,6 +78,8 @@
             <label for="password">Patient Address <span class="text-danger font-weight-bold mx-1">*</span></label>
             
             <input type="text"  class="form-control" formControlName="ws_pat_adrs" required>  
+            <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_adrs.dirty && updatepatientform.controls.ws_pat_adrs.errors">*This is required</span>
+             
           </div>
           <div class="col-md-6 col-12 my-1">
             <label for="password">Patient State <span class="text-danger font-weight-bold mx-1">*</span></label>
@@ -102,6 +114,8 @@
                 <label for="password"> Date of Discharge <span class="text-danger font-weight-bold mx-1">*</span></label>
                 
                 <input type="date"  class="form-control" formControlName="ws_pat_dod" required>  
+                <span class="text-danger" *ngIf="updatepatientform.controls.ws_pat_dod.dirty && updatepatientform.controls.ws_pat_dod.errors">*This is required</span>
+             
               </div>
               </div>
       

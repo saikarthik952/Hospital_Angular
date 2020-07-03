@@ -17,3 +17,11 @@
     position: absolute;
     bottom: 0;
 }
+.btn:hover{
+    cursor: pointer;
+}
+
+.btn:disabled{
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
